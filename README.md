@@ -1,2 +1,2 @@
 # studentsite
-This is my site
+This is lyns site
