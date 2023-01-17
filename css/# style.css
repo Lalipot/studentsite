@@ -3,35 +3,38 @@
 body { margin: 0; }
 
 /* GLOBAL COLORS */
-body { color: rgba(0,0,0,.8); }
-a { color: rgba(153, 0, 0, 0.8); }
-a:hover { color: rgba(153, 0, 0, 1); }
+body { color: rgba(0, 0, 0, 0.8); }
+a { color: rgba(0, 102, 204, 1); }
+a:hover { color: rgba(0, 51, 153, 1); }
 
 /* GLOBAL TYPOGRAPHY */
 body {
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: 88.75%; /* 14px */
-    line-height: 1.4;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 88.75%; /* 14px */
+  line-height: 1.4;
 }
 
-/* HEADER */
+
+/* SITE STRUCTURE */
+
 header {
-    background-color: rgba(153,0,0,1);
-    color: rgba(255,255,255, .8);
+    background-color: rgba(0, 102, 204, 1);
+    color: rgba(0, 0, 0, 0.8); 
     padding: 1em;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    align-items: center;;
+    align-items: center;
 }
 
 header a {
-    color: rgba(255,255,255, .8);
+    color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
 }
 
 header a:hover {
-    color: rgba(255,255,255, 1);
+    color: rgba(255, 255, 255, 1);
 }
+
 
 /* SITE ID */
 .site-id h1 {
@@ -42,12 +45,12 @@ header a:hover {
 .site-nav ul {
     display: flex;
     justify-content: flex-end;
-    list-style: none;
     margin: 0;
     padding: 0;
+    list-style: none;
 }
 
-.site-nav a {
+.site-nav  a {
     display: block;
     padding: 1em;
 }
@@ -57,60 +60,11 @@ main {
     background: rgba(0,0,0,.05);
 }
 
-section {
-    padding: 3em 1em;
-}
-
-/* FOOTER */
-footer {
-    border-top: 1px solid rgba(0,0,0,.05);
-    padding: 1em;
-}
-
-/* LAYOUT */
-.container {
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-@media (min-width: 768px) {
-    .two-col-sidebar {
-        display: grid;
-        grid-template-columns: 20em auto;
-    }
-
-    .two-col-sidebar aside {
-        border-right: 1px solid rgba(0,0,0,.1);
-    }
-}
-
-aside {
-    padding: 0 1em;
-}
-
-.primary {
-    padding: 0 1em;
-}
-
-/* SOCIAL NAV */
-.social-nav ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.social-nav a {
-    display: block;
-    padding: 1em;
-}
-
 /* HERO SECTION */
 .hero {
-    background-color: rgba(153,0,0,1);
-    color: rgba(255,255,255, .8);
+    background-color: rgba(0, 102, 204, 1);
     text-align: center;
+    color: white;
     padding: 6em 1em;
 }
 
@@ -126,7 +80,7 @@ aside {
     margin: 1em auto;
 }
 
-/* COURSE SECTION */
+/* COURSES SECTION */
 .courses {
     padding: 6em 1em;
     display: grid;
@@ -143,71 +97,37 @@ aside {
     text-align: center;
 }
 
-/* CUSTOM STYLING FOR SPECIFIC & SUB PAGES */
-.page-sub .hero {
-    background-color: rgba(0,0,0,.1);
-    color: rgba(0,0,0,.8);
+
+/* FOOTER */
+footer {
+    border-top: 1px solid rgba(0,0,0,.05);
+    padding: 1em;
 }
 
-.page-home .hero{
-    background-image: url('../img/strawberries.jpg');
-    background-size: cover;
-    background-position: center;
-    padding: 30vh 1em 20vh 1em;
-}
-
-.page-home header {
-    background-color: transparent;
-    position: absolute;
-    width: 100%;
-}
-
-
-
-/* COURSE WORK SECTION */
-.coursework {
-    padding: 6em 1em;
+/* SOCIAL NAV */
+.social-nav ul {
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
+    list-style: none;
 }
 
-.projects {
-    margin: 2em;
-}
-
-/* CODE BLOCKS */
-pre code {
-    width: 100%;
+.social-nav  a {
     display: block;
-    border: 1px solid #ddd;
-    background-color: #fff;
-    padding: 1em 3em;
-    margin-bottom: 1em;
-    line-height: 1.5;
-  }
-
-.markup-box {
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #fff;
-    padding: 1em 3em;
-    margin-bottom: 1em;
-}
-
-/* DEFINITION LISTS */
-dt {
-    font-weight: bold;
-    margin-top: 1em;
-}
-dd {
-    margin: 0;
+    padding: 1em;
 }
 
 
-/* FOR WEB DEV PURPOSES ONLY */
-/* body, * {
-    background-color: rgba(0,0,0,.05);
-    border: 1px solid rgba(0,0,0,.1);
-    color: rgba(0,0,0,.5);
+/* SUB PAGES */
+.page-sub .hero {
+    background-color:rgba(0, 0, 0, 0.1);
+    color: rgba(0, 0, 0, 0.8);
+}
+
+/* FOR DEV PURPOSES */
+/* body * {
+    background-color: rgba(0,0,0,.05) !important;
+    border: 1px solid rgba(0,0,0,.1) !important;
+    color: rgba(0,0,0,.5) !important;
 } */
