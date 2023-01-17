@@ -118,11 +118,85 @@ footer {
     padding: 1em;
 }
 
+/* LAYOUT */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
 
-/* SUB PAGES */
+section {
+    padding: 3em 1em;
+}
+
+/* SIDEBAR/ASIDE */
+aside {
+    padding: 2em 0;
+  }
+  
+@media (min-width: 768px) {
+    .two-col-sidebar {
+        display: grid;
+        grid-template-columns: 20em auto;
+    }
+    .two-col-sidebar aside {
+        border-right: 1px solid rgba(0, 0, 0, 0.1);
+        margin: 0 3em 2em 0;
+        padding: .3em 2em 0 0;
+    }
+}
+
+/* CUSTOM STYLING FOR SPECIFIC & SUB PAGES */
 .page-sub .hero {
     background-color:rgba(0, 0, 0, 0.1);
     color: rgba(0, 0, 0, 0.8);
+}
+
+/* CUSTOM HOME PAGE STYLING */
+.page-home .hero {
+    background-image: url('https://images.unsplash.com/photo-1490426951762-7df2e77e568a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80');
+    background-position: center top;
+    background-size: cover;
+}
+
+/* COURSE PAGES WITH MULTIPLE PROJECT LISTS */
+.coursework {
+    padding: 3em 1em;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.project {
+    margin: 2em;
+}
+
+/* CODE BLOCKS */
+
+pre code {
+    width: 100%;
+    display: block;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    padding: 1em 3em;
+    margin-bottom: 1em;
+    line-height: 1.5;
+  }
+
+.markup-box {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    padding: 1em 3em;
+    margin-bottom: 1em;
+}
+
+/* DEFINITION LISTS */
+dt {
+    font-weight: bold;
+    margin-top: 1em;
+}
+dd {
+    margin: 0;
 }
 
 /* FOR DEV PURPOSES */
