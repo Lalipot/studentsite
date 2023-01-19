@@ -1,3 +1,3 @@
 # studentsite
 This is lyns site
-# [View my Site](https:www.example.com)
+# [View my Site](https://lalipot.github.io/studentsite)

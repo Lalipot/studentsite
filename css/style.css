@@ -4,8 +4,8 @@ body { margin: 0; }
 
 /* GLOBAL COLORS */
 body { color: rgba(0, 0, 0, 0.8); }
-a { color: rgba(0, 102, 204, 1); }
-a:hover { color: rgba(0, 51, 153, 1); }
+a { color: rgb(85, 58, 167); }
+a:hover { color: rgb(57, 0, 104); }
 
 /* GLOBAL TYPOGRAPHY */
 body {
@@ -18,7 +18,7 @@ body {
 /* SITE STRUCTURE */
 
 header {
-    background-color: rgba(0, 102, 204, 1);
+    background-color: rgb(51, 6, 68);
     color: rgba(0, 0, 0, 0.8); 
     padding: 1em;
     display: grid;
@@ -27,12 +27,12 @@ header {
 }
 
 header a {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(222, 216, 234, 0.8);
     text-decoration: none;
 }
 
 header a:hover {
-    color: rgba(255, 255, 255, 1);
+    color: rgb(131, 56, 181);
 }
 
 
@@ -62,15 +62,16 @@ main {
 
 /* HERO SECTION */
 .hero {
-    background-color: rgba(0, 102, 204, 1);
+    background-color: rgb(24, 33, 25);
     text-align: center;
-    color: white;
+    color: rgb(75, 50, 48);
     padding: 6em 1em;
 }
 
 .hero h2 {
     font-size: 6em;
     line-height: 1;
+    color: rgb(116, 73, 121);
     text-transform: uppercase;
     margin: 0 auto;
 }
@@ -153,7 +154,7 @@ aside {
 
 /* CUSTOM HOME PAGE STYLING */
 .page-home .hero {
-    background-image: url('https://images.unsplash.com/photo-1490426951762-7df2e77e568a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80');
+    background-image: url('https://images.unsplash.com/photo-1474557157379-8aa74a6ef541?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2592&q=80');
     background-position: center top;
     background-size: cover;
 }
