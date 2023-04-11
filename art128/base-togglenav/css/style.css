@@ -577,7 +577,7 @@ section {
   }
 
   /* NAVICON */
-
+  /*take out blue highlight*/
   .toggle-nav .menu-button.navicon {
     color: rgba(255, 255, 255, 0);
   }
