@@ -554,10 +554,10 @@ section {
     display: block;
     display: inline-block;
     background-color: transparent;
-    border: 1px solid black;
-    padding: .5em .1em;
     cursor: pointer;
+    padding: .5em .1em;
     margin-bottom: 8em;
+    border: 1px solid black;
   
   }
   .toggle-nav .menu-button::selection {
@@ -574,7 +574,15 @@ section {
   color: white;
 }
 
-  /* NAVICON */
+.toggle-nav[data=navstate="closed"] ul{
+  height: 0;
+  overflow: hidden;
+}
+  
+.toggle-nav[data-navstate="open"] ul{
+  height: auto;
+  overflow: visible;
+}
   /*take out blue highlight*/
   .toggle-nav .menu-button.navicon {
     color: rgba(255, 255, 255, 0);
