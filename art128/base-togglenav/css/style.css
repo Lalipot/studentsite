@@ -542,14 +542,15 @@ section {
 
 /* TOGGLE NAV */
 @media (max-width: 767px) {
+  .toggle-nav .site-id {
+    position: absolute;
+  }
   .toggle-nav .site-nav {
     text-align: right;
     /* MENU BUTTON */
     /* TOGGLE NAV UL */
   }
-  .toggle-nav .site-id {
-    position: absolute;
-  }
+ 
   .toggle-nav li a:hover {
     color: #fff;
     background: #036;
@@ -570,6 +571,11 @@ section {
 
   }
   
+  .toggle-nav .site-nav ul {
+    display: block;
+    text-align: center;
+  }
+
   /* NAVICON */
 
   .toggle-nav .menu-button.navicon {
