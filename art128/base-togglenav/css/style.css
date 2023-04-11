@@ -560,7 +560,7 @@ section {
     display: inline-block;
     background-color: transparent;
     border: 1px solid black;
-    padding: .3em .8em;
+    padding: .5em .1em;
     cursor: pointer;
     margin-bottom: 8em;
   
@@ -611,3 +611,44 @@ section {
   }
 }
 
+/* Animated Toggle-Nav Menu */
+@media (max-width: 767px) {
+  .toggle-nav.animated ul {
+    display: block;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    padding: 0;
+    border-width: 0;
+    transition: all 0.3s ease;
+  }
+
+  .toggle-nav.animated[data-navstate=open] ul {
+    max-height: 138em;
+    opacity: 1;
+    padding: 0.5em 0;
+    border-width: 0px;
+    transition: all 0.6s ease;
+  }
+
+  .toggle-nav.animated li {
+    padding: 0;
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+
+  .toggle-nav.animated[data-navstate=open] li {
+    padding: 0.25em;
+    opacity: 1;
+    transition: all 0.6s ease 0.2s;
+  }
+
+  .toggle-nav.animated li a {
+    padding: 0;
+    transition: all 0.3s ease;
+  }
+
+  .toggle-nav.animated[data-navstate=open] li a {
+    padding: 0.75em;
+  }
+}
