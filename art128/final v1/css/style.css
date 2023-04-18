@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@charset "UTF-8";
 /* #BASE CSS (Initital Setup)
 ---------------------------------
     #BASE CONTENT
@@ -7,7 +8,6 @@
             #HEADINGS
             #PARAGRAPHS
             #LINKS
-            #ARTICLE
             #HELPERS
         #MEDIA
             #IMAGES
@@ -169,7 +169,6 @@ blockquote cite:before {
   left: -9999px;
 }
 
-
 .subheader {
   color: #999;
   margin-top: 1em;
@@ -186,11 +185,94 @@ hr {
   margin: 2em 0;
 }
 
+/* #CODE  */
+pre,
+code {
+  font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+  font-size: 0.875em;
+}
+
+pre {
+  margin: 1.5em 0 3em 0;
+  line-height: 1.2em;
+}
+
+code {
+  display: block;
+  padding: 1em 1.875em;
+  background: #f9f9f9;
+  border: 1px solid #ccc;
+  border-left: 2px solid #ccc;
+  overflow-x: auto;
+}
+
+/* BLOCKED LOAD */
+.blocked body,
+.blocked h1,
+.blocked h2,
+.blocked h3,
+.blocked h4,
+.blocked h5,
+.blocked h6,
+.blocked p,
+.blocked a,
+.blocked .site-header a,
+.blocked .site-footer a,
+.blocked .site-id h1,
+.blocked .site-id h1 a,
+.blocked li,
+.blocked blockquote,
+.blocked a.button,
+.blocked a.button.alt,
+.blocked button {
+  color: #eee;
+  background-color: #eee;
+  border-color: #eee;
+}
+
 /* #MEDIA  */
 /* #IMAGES */
 img {
   max-width: 100%;
   height: auto;
+}
+
+/* Image Floats */
+img.float-left {
+  float: left;
+  margin-right: 1em;
+  margin-bottom: 1em;
+  clear: both;
+}
+
+/* Clear Floats */
+.group::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Circular images */
+img.circular {
+  border-radius: 100%;
+}
+
+/* VIDEO */
+.video {
+  width: 100%;
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+  margin-bottom: 1em;
+}
+.video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 /* #COMPONENTS  */
@@ -200,37 +282,105 @@ button {
 }
 
 button,
-a.button,
-form input[type="submit"] {
+a.button {
   display: inline-block;
-  background-color: #39c;
-  border: 1px solid #39c;
+  background-color: #036;
+  border: 1px solid #036;
   color: #fff;
   padding: 0.75em 1em;
-  -webkit-border-radius: 0.32em;
-  -moz-border-radius:0.32em;
   border-radius: 0.32em;
   margin-top: 0.5em;
   margin-bottom: 0.5em;
   border: none;
   cursor: pointer;
-  line-height: 1em;
+  line-height: 1;
 }
 
 button.alt,
 a.button.alt {
-  background-color: rgba(255, 255, 255, 0);
-  border: 1px solid #39c;
-  color: #39c;
+  background-color: transparent;
+  border: 1px solid #036;
+  color: #036;
 }
 
 button:hover,
-a.button:hover 
-form input [type="submit"]:hover {
-  background-color: #069;
+a.button:hover {
+  background-color: #003;
   color: #fff;
-  border-color: #069;
+  border-color: #003;
   text-decoration: none;
+}
+
+/* #ACCORDIAN */
+.accordian {
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  margin-top: 2em;
+}
+.accordian + .accordian {
+  border-top: none;
+  margin-top: 0;
+}
+.accordian .collapsible {
+  opacity: 0;
+  max-height: 0;
+  transition: 0.2s ease-in-out all;
+  padding: 0 1.5em;
+  overflow: hidden;
+}
+.accordian.open .collapsible {
+  opacity: 1;
+  max-height: 2000px;
+  padding: 1em 1.5em 3em 1.5em;
+}
+.accordian h4 {
+  margin: 0;
+  padding: 1.5em 1em;
+}
+.accordian h4 span.light {
+  margin-left: 0.3em;
+  font-weight: normal;
+}
+.accordian h4:hover {
+  background: rgba(0, 0, 0, 0.03);
+  cursor: pointer;
+}
+.accordian:last-of-type {
+  margin-bottom: 3em;
+}
+.accordian p:last-of-type {
+  margin-bottom: 0;
+}
+.accordian:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* ACCORDIAN ARROWS */
+.accordian .arrow {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #888;
+  border-bottom: 1px solid transparent;
+  display: inline-block;
+  margin-top: 0.5em;
+  margin-bottom: 0;
+  margin-left: 0.5em;
+  margin-right: 0.2em;
+}
+.accordian .arrow.up {
+  border-bottom: 5px solid #888;
+  border-top: none;
+  margin-bottom: 2px;
+}
+
+.accordian.open .arrow {
+  border-bottom: 5px solid #888;
+  border-top: none;
+  margin-bottom: 2px;
 }
 
 /* LAYOUT */
@@ -461,6 +611,272 @@ section {
   margin-bottom: 0;
 }
 
+/* STICKY header - works with a class="sticky" on .site-header */
+.site-header.sticky {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+  background-color: #fff;
+}
+
+.site-header.sticky + .site-main {
+  padding-top: 3em;
+}
+
+/* Colored Sections */
+section.superlightgrey {
+  background: #f9f9f9;
+  padding: 5em 0 2em 0;
+}
+
+section.lightgrey {
+  background: #e0e0e0;
+  padding: 5em 0 2em 0;
+}
+
+section.darkgrey {
+  background: #222;
+  color: #fff;
+  padding: 5em 0 2em 0;
+}
+section.darkgrey a.button {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: black;
+}
+section.darkgrey a.button:hover {
+  background-color: white;
+}
+section.darkgrey a.button.alt {
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.8);
+  border-color: rgba(255, 255, 255, 0.8);
+}
+section.darkgrey a.button.alt:hover {
+  background-color: white;
+  color: black;
+  border-color: transparent;
+}
+
+section.hero.superlightgrey, section.hero.lightgrey, section.hero.darkgrey {
+  padding: 6em 1em 5em 1em;
+}
+
+/* Articles */
+article {
+  max-width: 38em;
+  margin: 0 auto 8em auto;
+  padding: 2em 0;
+}
+article h1 {
+  text-align: center;
+}
+article h1 + h2 {
+  text-align: center;
+  font-size: 1.5em;
+  line-height: 1.25em;
+  font-weight: normal;
+  margin-bottom: 1em;
+}
+article .date {
+  text-align: center;
+  font-size: 0.625em;
+  line-height: 0.625em;
+  color: #999;
+  font-weight: normal;
+}
+article .date + p {
+  margin-top: 2em;
+}
+article p + h2,
+article p + h3,
+article p + h4,
+article p + h5,
+article p + h6 {
+  margin-top: 1em;
+}
+
+/* Posts */
+.post {
+  padding: 2em 0;
+}
+
+/* Sub Pages with Multiple Column Layout */
+@media (min-width: 768px) {
+  .subpage-twocol {
+    display: flex;
+  }
+}
+@media (min-width: 768px) {
+  .subpage-sidebar {
+    width: 21%;
+    padding-right: 4%;
+  }
+}
+.subpage-sidebar .subheader {
+  font-size: 1em;
+  font-style: normal;
+  font-weight: normal;
+  margin-top: 0.5em;
+  margin-bottom: 0;
+  padding: 0.5em 0;
+  border-bottom: 1px solid #ccc;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #999;
+}
+
+@media (min-width: 768px) {
+  .subpage-main {
+    width: 70%;
+    padding-left: 4%;
+    border-left: 1px solid #ccc;
+  }
+}
+.subpage-main section:first-child {
+  padding-top: 0;
+}
+.subpage-main section:last-child {
+  padding-bottom: 5em;
+}
+
+.subpage-navigation {
+  font-family: Helvetica, Arial, sans-serif;
+  padding: 0;
+}
+.subpage-navigation ul {
+  margin: 0;
+  padding: 0;
+}
+.subpage-navigation ul li {
+  list-style: none;
+  margin-left: 0;
+}
+.subpage-navigation ul li a {
+  text-decoration: none;
+  display: block;
+  padding: 0.5em 0.875em;
+  border-bottom: 1px solid #ccc;
+}
+.subpage-navigation ul li ul {
+  border-top: none;
+}
+.subpage-navigation ul li ul li a {
+  padding-left: 1.875em;
+}
+
+/* Sub page with list items */
+.list-item {
+  padding: 2em 0;
+}
+.list-item .featured-image {
+  width: 30%;
+  margin-right: 5%;
+  float: left;
+}
+.list-item article {
+  margin-left: 35%;
+}
+.list-item article h2 {
+  margin-top: 0;
+}
+.list-item:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.list-item + .list-item {
+  margin-top: 2em;
+  border-top: 1px solid #eee;
+  padding-top: 4em;
+}
+
+/* Swap the display order of two columns */
+.orderswap {
+  flex-direction: row-reverse;
+}
+
+/* OLD/LEGACY SUPPORT FOR PRE-FLEXBOX ORDERSWAP */
+/* OLD VERTICAL CENTERING MARKUP PRE-FLEXBOX */
+.vert-parent .column {
+  display: flex;
+  align-items: center;
+}
+
+/* Thumb Lists */
+.thumblist {
+  padding: 0;
+}
+.thumblist li {
+  list-style: none;
+  margin: 0;
+  padding: 3em 0;
+  clear: both;
+}
+.thumblist li img {
+  max-width: 30%;
+  margin: 0 2em 1em 0;
+  float: left;
+}
+.thumblist li p {
+  max-width: none;
+}
+.thumblist li + li {
+  border-top: 1px solid #ddd;
+}
+@media (max-width: 767px) {
+  .thumblist li img {
+    max-width: 100%;
+    margin: 0 0 1em 0;
+    float: none;
+  }
+}
+
+.thumblist-grid {
+  margin: 2em 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+.thumblist-grid li {
+  list-style: none;
+  margin-left: 0;
+  margin-bottom: 2em;
+  width: 46%;
+  margin-right: 8%;
+  text-align: center;
+  font-size: 0.8em;
+}
+.thumblist-grid li a {
+  outline: none;
+}
+.thumblist-grid li a img {
+  transition: border-color 0.3s ease;
+  border-color: #fff;
+}
+.thumblist-grid li a img:hover {
+  border: 3px solid #39c;
+}
+.thumblist-grid li h5,
+.thumblist-grid li p {
+  line-height: 1.2em;
+}
+.thumblist-grid li:nth-child(even) {
+  margin-right: 0;
+}
+@media (min-width: 768px) {
+  .thumblist-grid li {
+    width: 19%;
+  }
+  .thumblist-grid li:nth-child(even) {
+    margin-right: 8%;
+  }
+  .thumblist-grid li:nth-child(4n) {
+    margin-right: 0;
+  }
+}
+
 /* #SITE NAVIGATION  */
 /* Default Site-Navigation Menu (both header & footer) */
 .site-navigation {
@@ -643,99 +1059,118 @@ section {
     padding: 0.75em;
   }
 }
-
-/* SUB PAGES */
-
-article {
-  max-width: 680px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-article h1,
-article h1 + .subhead,
-article .date {
-  text-align: center;
-}
-
-article h2.subhead { 
-  font-size: 1.5em;
-  line-height: 1.2em;
-}
-
-article .subhead {
-  font-weight: normal; 
-  opacity: .7;
-}
-
-article   .date {
-  font-size: .75em;
-  opacity: .5;
-  margin-bottom: 3em;
-}
-
-article p + h2,
-article p + h3,
-article p + h4,
-article p + h5,
-article p + h6, {
-  margin-top: 1.5em;
-}
-
-/*
-article p:first-of-type {
-  font-size: 1.4em;
-  line-height: 1.3;
-
-
-article p:first-of-type:first-letter{
-  font-size: 3em;
-  line-height: 1em;
-  background: #000;
-  color: #fff;
-  padding: .2em .4em;
-  margin-bottom: .3em;
-  float: left;
-
-
-
-}
-}*/
-
-/*FORMS*/
-
+/* FORMS */
 form {
-  max-width: 600px;
-  margin: 2em auto;
-}
-
-form label,
-form input, 
-form textarea {
-  box-sizing: border-box;
-  display: block;
-  width: 100%;  
-  font-size: 1em;
+  margin: 1.75em 0;
 }
 
 form label {
-  margin-top: 1em;
-  margin-bottom: 0.25em;
+  display: block;
 }
 
-form input [type="text"],
+form input,
+form textarea {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  line-height: 1.15em;
+  display: block;
+  margin-bottom: 1.25em;
+  width: 100%;
+  color: #666;
+  padding: 0.25em;
+  border: 1px solid #ccc;
+}
+
 form textarea {
   border: 1px solid #ccc;
-  padding: 0.5em;
-  color: #666;
+  min-height: 6em;
 }
 
-form textarea {
-  min-height: 10em;
-  line-height: 1.5;
+form input[type=button],
+form input[type=submit],
+form input[type=reset] {
+  width: auto;
+  background-color: #036;
+  border: 1px solid #036;
+  color: #fff;
+  padding: 0.75em 1em;
+  -webkit-border-radius: 0.32em;
+  -moz-border-radius: 0.32em;
+  border-radius: 0.32em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+form input[type=button]:hover,
+form input[type=submit]:hover,
+form input[type=reset]:hover {
+  background-color: #003;
+  border-color: #003;
 }
 
-form input [type="submit"] {
-margin-top: 1.5em; 
-width: auto; 
+/* make keyframes that tell the start state and the end state of our object */
+@-webkit-keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
+@-moz-keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+main {
+  /* call our keyframe named fade-in, use animattion ease-in and repeat it only 1 time */
+  -webkit-animation: fade-in ease-in 1;
+  -moz-animation: fade-in ease-in 1;
+  animation: fade-in ease-in 1;
+  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-duration: 0.5s;
+  -moz-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+}
+
+/* #SITE SPECIFIC CUSTOM CSS (e.g. Base Overrides)
+---------------------------------
+	#TYPOGRAPHY OVERRIDES
+		#@FONT-FACE
+        #BODY
+		#HEADINGS
+		#PARAGRAPHS
+    #LAYOUT OVERRIDES
+		#BODY
+		#CONTAINER
+    #NAVIGATION
+        # site-id
+        #SITE-NAVIGATION
+    #CONTENT
+        #SECTIONS
+--------------------------------- */
+/* Custom Overrides */
+/*
+body {
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+}
+*/
