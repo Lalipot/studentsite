@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8" />
-  <title>Site Name | Single Page Site</title>
+  <title>Site Name | About Us</title>
   <meta name="description"
     content="SiteBase: a minimalistic HTML + CSS + JS base front-end framework for simple web site projects." />
 
@@ -17,84 +17,34 @@
   <link href="css/style.css" rel="stylesheet" type="text/css" />
 </head>
 
-<body id = "top">
-  <header class="site-header toggle-nav animated sticky">
-      
-    <div class="site-id">
-        <h1><a class="scroll" href="#top">Site Name</a>
-        <span class="hidden-sm">/ single page 
-        version</span>
-        </h1>      
+<body>
+  <header class="site-header toggle-nav">
+          <div class="site-id">
+        <h1><a href="index.html">Site Name</a> / About</h1> 
       </div>
       <nav class="site-navigation ">
         <button class="menu-button navicon">Menu</button>
         <ul class="nav">
-          <li><a class="scroll" href="#top">Home</a></li>
-          <li><a class="scroll" href="#about">About</a></li>
-          <li><a class="scroll" href="#contact">Contact</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
   </header>
 
   <main class="site-main">
+
+    <section class="hero text-centered
+    full-width"><img="...art128/final-v1/img/headerStrawberry.png"></img>
+      <h2>About Us</h2>
+      <p>How the original pancake house came to be</p>
+    </section>
     <div class="container">
-      <section class="hero text-centered">
-        <h2>This is the Hero&nbsp;Section </h2>
-        <p>
-          This is the hero section of the top of a single page website
-        </p>
-        <p>
-          <a  class="button scroll" href="#about">Learn More About Us</a>
-          <a class="button alt scroll" href="#contact">Get in Touch</a>
-        </p>
-    </div>
-      <!-- END CONTAINER -->
-      </section>
+
+
 
       <section>
-        <div class="container">
-          
-          <div class="row">
-            <div class="one-third column">
-            <img src="img/placeholder-1x1.gif" alt="placeholder" />
-            <h3>Heading 3</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
-              semper, nunc quis euismod porta, ligula dolor interdum dui,
-              quis.
-            </p>
-            <p><a class="button scroll" href="#">Button</a></p>
-          </div>
-          <div class="one-third column">
-            <img src="img/placeholder-1x1.gif" alt="placeholder" />
-            <h3>Heading 3</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
-              semper, nunc quis euismod porta, ligula dolor interdum dui,
-              quis.
-            </p>
-            <p><a class="button" href="#">Button</a></p>
-          </div>
-          <div class="one-third column">
-            <img src="img/placeholder-1x1.gif" alt="placeholder" />
-            <h3>Heading 3</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
-              semper, nunc quis euismod porta, ligula dolor interdum dui,
-              quis.
-            </p>
-            <p><a class="button scroll" href="#">Button</a></p>
-          </div>
-          </div>
-        </div>
-      <!-- END CONTAINER -->
-
-      </section>
-  
-      <section id="about">
-        <div class="container">
-          <h3 class="section-title">About Us</h3>
-          <article>
+        <article>
             <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h1>
         
             <h2 class="subhead"> Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vestibulum ultrices augue vitae purus sodales eleifend.</h2>
@@ -135,47 +85,25 @@
             <p>Proin non ipsum ligula, ornare semper purus. Morbi tincidunt ligula sit amet nulla venenatis sit amet tristique nisl pretium. Nunc facilisis, orci et gravida blandit, lectus augue viverra augue, non tempus ligula leo nec arcu. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam eu elit quis sem posuere sagittis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris congue dolor a magna accumsan eu pharetra mi porta. Cras eget interdum velit.</p>
 
             <p>Aenean id nulla in dui iaculis adipiscing. Quisque commodo odio ut lacus auctor pellentesque. Pellentesque egestas pellentesque lorem sed imperdiet. Etiam porta egestas lectus eget interdum. Pellentesque purus neque, elementum non lobortis quis, vulputate ac metus. Etiam et purus a justo accumsan consequat eu elementum ligula. Nullam blandit pretium augue, vitae suscipit mauris lobortis sed. Nam iaculis sem at elit placerat sollicitudin. Ut quis pulvinar leo.</p>
-        </article>   
-        </div>
+        </article>
       </section>
-      <section id="contact">
-        <div class="container">
-
-          <h3 class="section-title">Contact Us</h3>
-          <form> 
-            <label for="contact_name">Name:</label>
-            <input type="text" id="contact_name" name="contact_name"/>
-    
-            <label for="email">Email Address:</label>
-            <input type="text" id="contact_email" name="contact_email"/>
-    
-            <label for="contact_message">Message:</label>
-            <textarea id="contact_message" name="contact_message"></textarea>
-    
-            <input type="submit" value="Submit"/>
-           
-         </form>
-        </div>
-      </section>
-      
+    </div>
+    <!-- END CONTAINER -->
   </main>
 
-
-  <footer class="site-footer"> 
+  <footer class="site-footer">
     <div class="container">
       <nav class="site-navigation">
         <ul class="nav group">
-          <li><a class="scroll" href="#top">Home</a></li>
-          <li><a class="scroll" href="#about">About</a></li>
-          <li><a class="scroll" href="#contact">Contact</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
     </div>
-  </div>
-
+    <!-- END CONTAINER -->
   </footer>
-  <!-- SCROLL JS -->
-  <script src="js/scroll.js"></script>
+
   <!-- MAIN JS -->
   <script src="js/script.js"></script>
 </body>
