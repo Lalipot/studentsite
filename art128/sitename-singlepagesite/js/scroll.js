@@ -1,6 +1,3 @@
-//modified from (added offset to) orignal anchor-scroll by Benjamin De Cock (https://github.com/bendc)
-//https://github.com/bendc/anchor-scroll
-
 document.addEventListener("DOMContentLoaded", () => {
     "use strict";
   
@@ -15,31 +12,32 @@ document.addEventListener("DOMContentLoaded", () => {
     })();
   
     const ease = (duration, elapsed, start, end) =>
-      Math.round(end * (-Math.pow(2, -10 * elapsed / duration) + 1) + start);
+      Math.round(end * (-Math.pow(2, -10 * elapsed/duration) + 1) + start);
   
     const getCoordinates = hash => {
       const start = root.scrollTop;
-  
+
       //add offset
       function haveClass(elem, className) {
-        return new RegExp(" " + className + " ").test(" " + elem.className + " ");
+        return newRegExp(" " + className + " ").text(" " + elem.className + " ");
       }
       const siteheader = document.querySelector(".site-header");
-      const siteheaderfixed = haveClass(siteheader, "sticky");
+      const siteheadersticky = haveClass(siteheader, "sticky");
       var offset;
-      if (siteheaderfixed) {
-        offset = document.querySelector(".site-id").offsetHeight + 15;
+      if (siteheadersticky) {
+        offset =document.querySelector(".site-branding").offsetHeight + 15;
       } else {
         offset = 0;
       }
-  
+    
+      
       const delta = (() => {
         if (hash.length < 2) return -start;
         const target = document.querySelector(hash);
         if (!target) return;
         const top = target.getBoundingClientRect().top;
         const max = root.scrollHeight - window.innerHeight;
-        return (start + top < max ? top : max - start) - offset;
+        return start + top < max ? top : max - start;
       })();
       if (delta) return new Map([["start", start], ["delta", delta]]);
     };
@@ -53,8 +51,8 @@ document.addEventListener("DOMContentLoaded", () => {
         progress.set("elapsed", timestamp - start);
         root.scrollTop = ease(...progress.values(), ...coordinates.values());
         progress.get("elapsed") < progress.get("duration")
-          ? requestAnimationFrame(tick)
-          : complete(hash, coordinates);
+        ? requestAnimationFrame(tick)
+        : complete(hash, coordinates);
       };
   
       const progress = new Map([["duration", 800]]);
