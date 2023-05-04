@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Contact Us | The Original Pancake House</title>
+  <meta name="Pancakes as you like them!"
+    content="SiteBase: a minimalistic HTML + CSS + JS base front-end framework for simple web site projects." />
+
+  <!-- VIEWPORT FOR MOBILE -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- FOR IE/EDGE -->
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+  <!-- MAIN CSS FILE -->
+  <link href="css/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <header class="site-header toggle-nav">
+          <div class="site-id">
+        <h1><a href="index.html">Site Name</a> / Contact Us</h1> 
+      </div>
+      <nav class="site-navigation ">
+        <button class="menu-button navicon">Menu</button>
+        <ul class="nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="delivery.html">Delivery</a></li>
+        </ul>
+      </nav>
+  </header>
+
+  <main class="site-main">
+    <img src="img/headerStrawberry.png"></img>
+
+    <section class="hero text-centered full-width">
+      
+      <h2>Contact Us</h2>
+      <p>Please allow 2 business days for a response.</p>
+    </section>
+    <div class="container">
+    <section>
+      
+      <div class="row">
+      <div class="one-half column">
+
+          <img src="img/restaurant.png" alt="placeholder" height="350" width="450"/>
+
+      </div>
+     <div class="one-half column">
+     <form> 
+        <label for="contact_name">Name:</label>
+        <input type="text" id="contact_name" name="contact_name"/>
+
+        <label for="email">Email Address:</label>
+        <input type="text" id="contact_email" name="contact_email"/>
+
+        <label for="contact_message">Message:</label>
+        <textarea id="contact_message" name="contact_message"></textarea>
+
+        <input type="submit" value="Submit"/>
+      </div>
+     </form>
+     </div>
+    </div>
+ 
+    <!-- END CONTAINER -->
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <nav class="site-navigation">
+        <ul class="nav group">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="delivery.html">Delivery</a></li>
+        </ul>
+      </nav>
+    </div>
+    <!-- END CONTAINER -->
+  </footer>
+
+  <!-- MAIN JS -->
+  <script src="js/script.js"></script>
+</body>
+
+</html>
