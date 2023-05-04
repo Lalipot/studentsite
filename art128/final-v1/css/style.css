@@ -40,13 +40,18 @@
 	112.5% => 18px
 	125%   => 20px
 */
+
+
 body {
   font-family: Avenir Next;
+  font-style: bold;
   color: #333;
-  font-size: 87.5%;
+  font-size: 87.5%
   /* 14px; */
   line-height: 1.5;
   /* 14px x 1.5em = 21px */
+  background-image: url("../final-v1/img/breakfastBG.jpg");
+  background-color: #cccccc;
 }
 
 /* #HEADINGS
@@ -203,8 +208,8 @@ button,
 a.button,
 form input[type="submit"] {
   display: inline-block;
-  background-color: #39c;
-  border: 1px solid #39c;
+  background-color: #92ccb3;
+  border: 1px solid #92ccb3;
   color: #fff;
   padding: 0.75em 1em;
   -webkit-border-radius: 0.32em;
@@ -220,8 +225,8 @@ form input[type="submit"] {
 button.alt,
 a.button.alt {
   background-color: rgba(255, 255, 255, 0);
-  border: 1px solid #39c;
-  color: #39c;
+  border: 1px solid #92ccb3;
+  color: #92ccb3;
 }
 
 button:hover,
@@ -354,6 +359,7 @@ section,
 /* Header & Footer */
 body {
   background: #fff;
+  background-image: "img/BreakfastBGSmall.jpg";
 }
 
 /* Header & Footer */
@@ -379,7 +385,7 @@ body {
 header {
     background-color: #92ccb3;
     color: rgba(0, 0, 0, 0.8); 
-    padding: 2em;
+    padding: 2.5em;
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: right;
@@ -438,8 +444,8 @@ section {
 /* Hero Sections */
 .container .hero {
   position: relative;
-  top: 2em;
-  margin-bottom: 3em;
+  top: .05em;
+  margin-bottom: 1em;
 }
 
 .hero {
@@ -450,7 +456,7 @@ section {
 }
 .hero h1,
 .hero h2 {
-  font-size: 3em;
+  font-size: 4em;
   line-height: 1.1em;
   max-width: 10em;
 }
