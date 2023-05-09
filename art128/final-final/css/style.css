@@ -363,7 +363,7 @@ body {
 }
 
 /* Header & Footer */
-.site-header a,
+.site-header a, .site-header.sticky,
 .site-footer a {
   color: #fff;
 }
@@ -391,7 +391,7 @@ header {
     align-items: right;
 }
 @media (min-width: 768px) {
-  .site-header {
+  .site-header, .site-header.sticky {
     display: flex;
     justify-content: space-between;
     padding-top: 0.75em;
