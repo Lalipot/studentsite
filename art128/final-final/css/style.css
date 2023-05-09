@@ -404,8 +404,8 @@ header {
 }
 .site-id h1 {
   font-size: 1.5em;
-  font-weight: normal;
-  font-style: normal;
+  font-weight: bold;
+  font-style: bold;
   margin: 0;
   color: #999;
   padding: 0.5em 0 0.4em 0;
@@ -444,7 +444,7 @@ section {
 
 /* Hero Sections */
 .container .hero {
-  position: relative;
+  position: center;
   top: .05em;
   margin-bottom: 1em;
 }
@@ -453,12 +453,12 @@ section {
   background: #c6beac;
   background-image: '.../img/pancakeHeader.png';
   border-top: none;
-  padding: 4em 1em 3em 1em;
+  padding: 2em 1em 2em 1em;
   margin-bottom: 1.5em;
 }
 .hero h1,
 .hero h2 {
-  font-size: 4em;
+  font-size: 6em;
   line-height: 1.1em;
   max-width: 10em;
 }
