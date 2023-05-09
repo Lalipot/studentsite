@@ -43,14 +43,14 @@
 
 
 body {
-  font-family: Avenir Next;
+  font-family: Arial, Helvetica, sans-serif;
   font-style: bold;
   color: #333;
-  font-size: 87.5%
+  font-size: 87.5%;
   /* 14px; */
   line-height: 1.5;
   /* 14px x 1.5em = 21px */
-  background-image: url("../final-v1/img/breakfastBG.jpg");
+  background-image: url("img/breakfastBG.jpg");
   background-color: #cccccc;
 }
 
@@ -64,7 +64,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: Avenir Next;
+  font-family: Arial, Helvetica, sans-serif;
   margin: 0.5em 0;
 }
 
@@ -357,10 +357,10 @@ section,
 }
 
 /* Header & Footer */
-body {
+/*body {
   background: #fff;
   background-image: "img/BreakfastBGSmall.jpg";
-}
+}*/
 
 /* Header & Footer */
 .site-header a,
@@ -481,7 +481,7 @@ section {
 /* #SITE NAVIGATION  */
 /* Default Site-Navigation Menu (both header & footer) */
 .site-navigation {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: proxima-nova, Helvetica, Arial, sans-serif;
 }
 .site-navigation .menu-button {
   display: none;
@@ -695,7 +695,7 @@ article p + h2,
 article p + h3,
 article p + h4,
 article p + h5,
-article p + h6, {
+article p + h6 {
   margin-top: 1.5em;
 }
 
